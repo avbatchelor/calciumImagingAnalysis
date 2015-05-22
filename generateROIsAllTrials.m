@@ -1,5 +1,6 @@
 function generateROIsAllTrials
 
+set(0,'DefaultFigureWindowStyle','normal')
 % folder = 'C:\Users\Alex\Documents\Data\CalciumImagingData\B1\150511\150511_F2_C1';
 folder = uigetdir;
 cd(folder)
