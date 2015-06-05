@@ -24,7 +24,7 @@ for f = 1:length(rawfiles)
 end
 protocols = unique(protocols);
 
-for p = 1%:length(protocols)
+for p = 1:length(protocols)
     
     % Find out tag for each trial
     rawfiles = dir([protocols{p} '*_Raw_*']);
@@ -83,14 +83,14 @@ for p = 1%:length(protocols)
                 figure(m)
                 subplot(2,1,1)
                 plot(traceStruct(p).block(m).channelOne','--')
-%                 hold on
-%                 plot(mean(traceStruct(p).block(m).channelOne),'k--')
+                hold on
+                plot(mean(traceStruct(p).block(m).channelOne),'k--','LineWidth',3)
                 hold on
                 subplot(2,1,2)
                 plot(traceStruct(p).block(m).channelTwo')
-%                 hold on
-%                 plot(mean(traceStruct(p).block(m).channelTwo),'k')
-                suptitle(['Block ',uniqueBlocks(m)])
+                hold on
+                plot(mean(traceStruct(p).block(m).channelTwo),'k','LineWidth',3)
+                suptitle(['Block ',num2str(uniqueBlocks(m))])
                
                 legend(strsplit(num2str(1:qS)));
                 

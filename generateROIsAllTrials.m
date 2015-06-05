@@ -34,11 +34,13 @@ for p = 1:length(protocols)
             if (strcmp(err.message,'No Camera Input: Exiting scimStackROI routine'))
                 fprintf(['No camera input for trial ',num2str(data.params.trial),'\n']);
             else 
-               fprintf('Some other error\n')
+               rethrow(err)
             end
         end % end try/catch
         prevTrialBlock = data.params.trialBlock;
     end
+    
+    clearvars -except protocols
 end
 
 
